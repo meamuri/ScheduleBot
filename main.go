@@ -9,22 +9,23 @@ import (
 )
 
 const (
-	// EarlyForFestival is
+	// EarlyForFestival - если пользователь ввел число, меньшее чем дата начала фестиваля
 	EarlyForFestival string = "В этот день фестиваль еще не начался!"
-	// ToLateForFestival is
+	// ToLateForFestival - а эта строка о том, что введенное число больше даты последнего дня фестиваля
 	ToLateForFestival string = "Сожалеем, фестиваль уже закончился"
-	//Info AboutDate24 is
+	//InfoAboutDate24 - расписание на 24 апреля
 	InfoAboutDate24 string = "Показы 24 апреля: \n-Шарли и его зубы \n-Скупость \n-Парикмахер \n-Светлая сторона \n-Новая жизнь \n-Пеле"
-	// InfoAboutDate25 is
+	// InfoAboutDate25 - расписание на 25 апреля
 	InfoAboutDate25 string = "Показы 25 апреля: \n-Фриланс \n-Лето \n-Утопия \n-Муза"
-	// InfoAboutUnknownDate is
+	// InfoAboutUnknownDate - строка для любой ошибки (пусть формально такой кейс и невозможен в силу предикатов)
 	InfoAboutUnknownDate string = "Сожалеем, в этот день фестиваль не проводится!"
-	// InfoAboutNotDate is
+	// InfoAboutNotDate - любая ошибка ввода
 	InfoAboutNotDate string = "Пожалуйста, введите интересующий вас день показа (23 - 25)"
 )
 
 func getInfo(date int) string {
 	switch {
+
 	case date < 24:
 		return EarlyForFestival
 
